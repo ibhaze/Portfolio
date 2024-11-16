@@ -39,7 +39,9 @@
         <header class="hero-section-home">
             <h1>I DESIGN THINGS FOR A LIVING</h1>
         </header>
-
+        <div class="scroll-down-arrow">
+            <span><img class="down-arrow" src="images/arrowdown.svg"></span>  <!-- Down Arrow Icon -->
+        </div>
 
 
         <!-- Projects Section -->
@@ -99,6 +101,12 @@
             if (rect.top <= window.innerHeight) {
                 projectsSection.classList.add('visible');
             }
+        });
+        document.querySelector('.scroll-down-arrow').addEventListener('click', function() {
+            window.scrollTo({
+                top: window.innerHeight,  // Scroll down by one viewport height
+                behavior: 'smooth'        // Smooth scroll animation
+            });
         });
     </script>
 
