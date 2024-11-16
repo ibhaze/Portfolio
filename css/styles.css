@@ -475,6 +475,7 @@ body {
     height: 0.5px; /* Thickness of the line */
     background-color: #A1E9A2; /* Line color */
     flex-grow: 1; /* Allows the line to take up remaining space */
+    margin-top: 30px;
 }
 
 
@@ -553,11 +554,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh; /* Full viewport height */
-
     font-weight: lighter;
     line-height: 1.2; /* Adjust line height if necessary */
 }
-
 /* Remove the width restriction from .eftelingbody */
 .eftelingbody {
     margin: 0;
@@ -659,13 +658,13 @@ body {
 /* Next Project Button */
 .next-project-button {
     position: relative; /* Fixed to viewport */
-    bottom: 10%; /* Distance from the bottom */
+    bottom: 30%; /* Distance from the bottom */
     right: -85%; /* Distance from the right edge */
     
     color: #A1E9A2;
     padding: 1rem 2rem;
  
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     border-radius: 25px;
     z-index: 1000; /* Ensure it stays on top */
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -675,6 +674,26 @@ body {
 .next-project-button:hover {
     background-color: #0A2F26;
     color: #A1E9A2;
+}
+.scroll-down-arrow {
+    position: fixed;  /* Positioning it relative to the body */
+    top: 700px;  /* Position the arrow below the header */
+    left: 50%;
+    transform: translateX(-50%);  /* Center it horizontally */
+     /* Adjust the size of the arrow */
+    animation: bounce 1.5s infinite;  /* Add bounce animation */
+    cursor: pointer;  /* Make it clickable */
+}
+.down-arrow{
+    width:4rem
+}
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);  /* Bounce distance */
+    }
 }
 
 @keyframes bounce {
