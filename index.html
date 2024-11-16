@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Landing</title>
+    <link rel="stylesheet" href="css/styles.css">   
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="js/cursor-follow.js" defer></script>
+</head>
+<body class="landing" id="landingPage">
+    <div class="follower">
+        <div class="inner-circle"></div>
+    </div>
+    <div class="centered-content">
+        <h1>Praise Ibhaze</h1>
+    </div>
+    <div class="loader" id="loader">0</div>
+   
+    <script>
+        let loadPercent = 0;
+        const loader = document.getElementById('loader');
+        const landingPage = document.getElementById('landingPage');
+
+        function incrementLoader() {
+            if (loadPercent < 100) {
+                loadPercent++;
+                loader.textContent = loadPercent;
+                setTimeout(incrementLoader, 8); // Increment every 8 ms
+            } else {
+                // Trigger drag-down animation
+                landingPage.classList.add("drag-down");
+
+                // Redirect after the animation (1.2 seconds to match CSS duration)
+                setTimeout(() => {
+                    window.location.href = 'home.html';
+                }, 700); // Adjust time to match animation
+            }
+        }
+
+        // Start the loader
+        incrementLoader();
+    </script>
+</body>
+</html>

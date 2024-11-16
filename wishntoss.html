@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PP+Neue+Montreal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/cursor-follow.js" defer></script>
+</head>
+<body>
+    <div class="follower">
+        <div class="inner-circle"></div>
+    </div>
+
+    <div class="fade-in">
+        <nav class="navbar">
+            <a href="home.html" class="ptext">Praise Ibhaze</a>
+            <a href="about.html" class="about-btn"><li>ABOUT ME</li></a>
+        </nav>
+        <div class="eftelingbody">
+            <h1>Wish 'N Toss</h1>
+ 
+            <div class="content">
+                <!-- Goal section -->
+                <div class="section-header">
+                    <span class="section-tiny-text">01</span>
+                    <div class="section-line"></div>
+                </div>
+                <div class="section">
+                    <h2>Goal</h2>
+                    <p>
+                        The goal was to solve the problem of parents with too many toys for their kids but not enough space to store them.
+                    </p>
+                </div>
+        
+                <!-- Images below the paragraphs -->
+                <div class="image-container">
+                    <img class="eftelingimg" src="images/wishntoss/Landing page.png" alt="Wish 'N Toss Landing Page">
+                    <img class="eftelingimg" src="images/wishntoss/loading page.png" alt="Wish 'N Toss Loading Page">
+                </div>
+        
+                <!-- Process section -->
+                <div class="section-header">
+                    <span class="section-tiny-text">02</span>
+                    <div class="section-line"></div>
+                </div>
+                <div class="section">
+                    <h2>Process</h2>
+                    <p>
+                        The project involved three cycles of ideation to find the best approach. Research showed that parents often give away or throw out toys. Through interviews with a parent, I developed the idea of a platform where parents could connect to swap toys they no longer needed. 
+                  
+                        Initially, I considered a feature inspired by Tinder swipes to make the process engaging. However, I decided against it for ethical reasons, as it might become addictive. Instead, I opted for a simple e-store-style feature.
+                    </p>
+                </div>
+        
+                <div class="image-container"> 
+                    <img class="eftelingimg" src="images/wishntoss/Question pages 4.png" alt="Wish 'N Toss Question Page">
+                    <img class="eftelingimg" src="images/wishntoss/Home page.png" alt="Wish 'N Toss Home Page">
+                </div>
+        
+                <!-- Tools Used section -->
+                <div class="section-header">
+                    <span class="section-tiny-text">03</span>
+                    <div class="section-line"></div>
+                </div>
+                <div class="section">
+                    <h2>Tools Used</h2>
+                    <div class="skills-list">
+                        <ul>
+                            <li>Git</li>
+                            <li>Trello</li>
+                            <li>Figma</li>
+                            <li>Flutter</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <!-- Results section -->
+                <div class="section-header">
+                    <span class="section-tiny-text">04</span>
+                    <div class="section-line"></div>
+                </div>
+                <div class="section">
+                    <h2>Results</h2>
+                    <p>
+                        The app allows parents in the North Brabant area to swap toys with each other. Users can find toys, upload images of their own, and specify conditions for exchange. This created a new platform for a toy marketplace app, linking to the Dutch tradition of Sinterklaas gift-giving.
+                    </p>
+                </div>
+            </div>
+        </div>  <!-- Next Project Button -->
+     
+    </div>    
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <a href="https://www.linkedin.com/in/ibhaze-praise/" target="_blank" class="contact-icon" id="linkedin">
+                <img src="images/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="mailto:ibhazepraise7@gmail.com" class="contact-icon" id="email">
+                <img src="images/mail.svg" alt="Email">
+            </a>
+            <a href="https://github.com/ibhaze" target="_blank" class="contact-icon" id="github">
+                <img src="images/github.svg" alt="GitHub">
+            </a>
+        </div>
+
+      
+   
+        <script>
+            window.addEventListener('load', function() {
+                const fadeInElement = document.querySelector('.fade-in');
+                fadeInElement.style.opacity = '1';
+            });
+
+            window.addEventListener('scroll', function() {
+                const projectsSection = document.getElementById('content');
+                const rect = projectsSection.getBoundingClientRect();
+                if (rect.top <= window.innerHeight) {
+                    projectsSection.classList.add('visible');
+                }
+            });
+        </script>
+    <a href="gta.html" class="next-project-button">Next Project</a>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PP+Neue+Montreal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/cursor-follow.js" defer></script>
+    
+     
+</head>
+<body>
+    <div class="follower">
+        <div class="inner-circle"></div>
+    </div>
+
+    <div class="fade-in">
+        <nav class="navbar">
+            <a href="home.html" class="ptext">Praise Ibhaze</a>
+            <a href="about.html" class="about-btn"><li>ABOUT ME</li></a>
+        </nav>
+        <div class="eftelingbody">
+            <h1>Game Tutorial Alliance</h1>
+ 
+            
+            
+            <div class="content">
+                <!-- Goal section -->
+                <div class="section-header">
+                    <span class="section-tiny-text">01</span>
+                    <div class="section-line"></div>
+                </div>
+                <div class="section">
+                    <h2>Goal</h2>
+                    <p>
+                        The goal was to produce comprehensive yet easy to grasp tutorials for student gamers 
+                    </p>
+                </div>
+        
+                <!-- Images below the paragraphs -->
+                <div class="image-container">
+                    <img class="gtaimg" src="images/gta/Index Page.png" alt="Efteling Landing Page">
+                    
+                </div>
+        
+                <!-- Process section -->
+                <div class="section-header">
+                    <span class="section-tiny-text">02</span>
+                    <div class="section-line"></div>
+                </div>
+                <div class="section">
+                    <h2>Process</h2>
+                    <p>
+                        I brainstormed with my group to see what a goodproject to tackle would be and it was glaring that easy-to-understand gaming tutorials didn't exist at the time , 
+                        so this was the project , after this,I interviewed Fontys students to see what the most popular games in the school were and I designed a website that had tutorials
+                        on only those games .
+                    </p>
+                </div>
+        
+                <div class="image-container">
+                    <img class="gtaimg" src="images/gta/Choosing Tutorial Page Overwatch2.png" alt="Efteling Landing Page">
+                </div>
+        
+                <!-- Tools Used section -->
+                <div class="section-header">
+                    <span class="section-tiny-text">03</span>
+                    <div class="section-line"></div>
+                </div>
+                <div class="section">
+                    <h2>Tools Used</h2>
+                    <div class="skills-list">
+                        <ul>
+                            <li>Git</li>
+                            <li>Trello</li>
+                            <li>Figma</li>
+                            <li>HTML/CSS</li>
+                            <li>Javascript</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <!-- Results section -->
+                <div class="section-header">
+                    <span class="section-tiny-text">04</span>
+                    <div class="section-line"></div>
+                </div>
+                <div class="section">
+                    <h2>Results</h2>
+                    <p>
+                        The website creates an opportunity for student gamers to view tutorials on the games they like .The website contains both audio and video tutorials that are both
+                        short and direct, making the website a gamers dream
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <a href="https://www.linkedin.com/in/ibhaze-praise/" target="_blank" class="contact-icon" id="linkedin">
+                <img src="images/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="mailto:ibhazepraise7@gmail.com" class="contact-icon" id="email">
+                <img src="images/mail.svg" alt="Email">
+            </a>
+            <a href="https://github.com/ibhaze" target="_blank" class="contact-icon" id="github">
+                <img src="images/github.svg" alt="GitHub">
+            </a>
+        </div>
+  
+
+    <!-- Next Project Button -->
+    <a href="efteling.html" class="next-project-button">Next Project</a>
+
+    <script>
+        window.addEventListener('load', function() {
+            const fadeInElement = document.querySelector('.fade-in');
+            fadeInElement.style.opacity = '1';
+        });
+
+        window.addEventListener('scroll', function() {
+            const projectsSection = document.getElementById('content');
+            const rect = projectsSection.getBoundingClientRect();
+            if (rect.top <= window.innerHeight) {
+                projectsSection.classList.add('visible');
+            }
+        });
+    </script>
+</body>
+</html>
