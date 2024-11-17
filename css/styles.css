@@ -1,8 +1,9 @@
 /* General Reset */
 * { 
-    box-sizing: border-box;
+    box-sizing:inherit;
     font-family: 'Plus Jakarta Sans', sans-serif;
-  
+    margin: 0;
+  padding: 0;
 }
 *p{
     font-family: 'PP Neue Montreal', sans-serif;
@@ -59,6 +60,11 @@
         transform: translateY(0);
     }
 }
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 
 /* Shared Background and Text Color */
 body {
@@ -70,6 +76,8 @@ body {
     min-height: 100%;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box; 
+    transform-origin: top left;
 }
 
 /* Centered content styling for the landing page */
@@ -231,18 +239,88 @@ body {
     border-radius: 50%; /* Makes it a circular stroke */
     z-index: 0; /* Keeps outer circle below the profile image */
 }
- 
+@media (max-width: 768px) {
+    /* Ensure hero-section uses a column layout and centers everything */
+    .hero-section {
+        display: flex;
+        flex-direction: column;  /* Stack image and text vertically */
+        justify-content: center; /* Vertically center content */
+        align-items: center;     /* Horizontally center content */
+        padding: 2rem;           /* Adjust padding */
+        height: auto;            /* Let content height adjust automatically */
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;  /* Stack the image and text */
+        justify-content: center; /* Vertically center content */
+        align-items: center;     /* Horizontally center content */
+        text-align: center;      /* Center the text */
+        width: 100%;
+    }
+
+    /* Fix profile-wrapper alignment */
+    .profile-wrapper {
+        width: 250px;   /* Adjust image size on smaller screens */
+        height: 250px;
+        margin-bottom: 1rem; /* Space between image and text */
+        display: flex;
+        justify-content: center; /* Ensure the image is centered inside the wrapper */
+        align-items: center;     /* Ensure the image is centered vertically */
+        position: relative;  /* Make sure position is relative */
+        transform: none;     /* Remove any transforms that might shift the image */
+    }
+
+    /* Adjust the profile image size to fill the wrapper */
+    .profimg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensure the image covers the entire circle */
+        border-radius: 50%;  /* Keep the image circular */
+    }
+
+    /* Ensure hero-text is centered below the image */
+    .hero-text {
+        margin-top: 2rem;  /* Space between image and text */
+        width: 100%;
+        text-align: center; /* Center the text */
+    }
+
+    /* Adjust font size of the heading */
+    .hero-section h1 {
+        font-size: 6vw;
+    }
+
+    /* Adjust font size of the sub-text */
+    .sub-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adjust for even smaller screens */
+    .hero-section h1 {
+        font-size: 7vw;
+    }
+
+    .sub-text {
+        font-size: 0.9rem;
+    }
+
+    .profile-wrapper {
+        width: 220px;   /* Further reduce image size on very small screens */
+        height: 220px;
+    }
+}
+
 /* Navbar Styling */
  
 
 .navbar.hidden {
     transform: translateY(-100%); /* Move it out of view */
 }
-
-/* Style for links in the navbar */
  
-
-/* Navbar Styling */
+  
 .navbar {
     background-color: rgba(10, 47, 38, 0.2);
     padding: 1rem 2rem;
@@ -255,6 +333,7 @@ body {
     right: 0;
     z-index: 9999;
     transition: transform 0.3s ease-in-out; /* Smooth transition for visibility */
+    flex-wrap: wrap;
 }
 
 /* Style for links in the navbar */
@@ -483,37 +562,51 @@ body {
  
 /* Responsive Styles */
 @media (max-width: 768px) {
+    .hero-section-home h1 {
+        font-size: 6vw; /* Scales headline for smaller viewports */
+    }
+
     .projects-container {
         margin: 0 5%;
     }
 
-    .hero-section-home h1 {
-        font-size: 2.5em;
+    .navbar {
+        flex-direction: column; /* Stack navigation vertically */
+        padding: 1rem; /* Adjust padding */
     }
 
-    .navbar {
-        flex-direction: column;
-        align-items: center;
+    .footer-bottom {
+        flex-direction: column; /* Stack footer items */
+    }
+}
+@media (max-width: 480px) {
+    
+    .hero-section-home h1 {
+        font-size: 4.5vw; /* Smaller headline for small screens */
+    }
+    .footer-email {
+        font-size: 3rem; /* Smaller font for mobile */
+        word-wrap: break-word; /* Ensure email breaks if too long */
+    }
+    .projects-container {
+        margin: 0 3%;
     }
 
     .navbar a {
+        font-size: 1rem;
+        margin: 0.5rem;
+    }
+
+    .footer-card {
+        padding: 20px;
+    }
+
+    .footer-links li {
+        display: block; /* Stack links vertically */
         margin: 5px 0;
     }
 }
 
-@media (max-width: 480px) {
-    .hero-section-home h1 {
-        font-size: 2em;
-    }
-    
-    .projects-container {
-        margin: 0 2%;
-    }
-
-    .project-item {
-        font-size: 2em;
-    }
-}
  
 .contact-info {
     position: fixed;
@@ -572,7 +665,7 @@ body {
 .content {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the content */
+    align-items: center; /* Center all content inside .content */
     gap: 20px; /* Space between elements */
     width: 100%; /* Allow the content to fill the width */
     padding: 20px; /* Add padding around the content */
@@ -581,13 +674,13 @@ body {
 /* Sections for heading and paragraph alignment */
 .section {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;  /* Stack elements vertically */
+    align-items: center; /* Center all elements inside the section */
     width: 80%; /* Limit width of content to avoid stretching */
-    margin-top: 50px; /* Add some space above the sections */
- 
+    margin-top: 50px; /* Add space above the sections */
 }
+
+ 
 
 /* Headings */
 .section h1, .section h2 {
@@ -595,6 +688,7 @@ body {
     margin: 0;
     font-weight: lighter;
     font-size: 2rem; /* Adjust size */
+    margin-bottom: 19px;
 }
 
 /* Paragraphs */
@@ -634,14 +728,13 @@ body {
     flex-grow: 1; /* Line takes remaining space */
 }
 
-/* Images below the paragraphs */
-.image-container {
+/* Images below the paragraphs */.image-container {
     display: flex;
     flex-direction: row; /* Keep images in a row */
     gap: 10px; /* Small gap between images */
-    width: 80%; /* Limit the width of the image container */
-    margin-top: 20px; /* Add space between the paragraph and images */
-    margin-left: 63rem;
+    width: 100%; /* Ensure images container takes the full width of the parent */
+    justify-content: center; /* Center images horizontally */
+    margin-top: 20px; /* Space between the paragraph and images */
 }
 
 /* Images */
@@ -649,9 +742,23 @@ body {
     width: 20%; /* Keep the image size as is */
     height: auto; /* Maintain natural height */
 }
-.gtaimg{
-    width: 50%; /* Keep the image size as is */
-    height: auto; 
+.gtaimg {
+    width: 60%; /* Keep the image size as is */
+    height: auto; /* Maintain natural height */ 
+}
+/* Video container */
+.video-container {
+    width: 100%; /* Ensure video container is within the section width */
+    margin-top: 20px; /* Space between the paragraph and video */
+    display: flex;
+    justify-content: center; /* Center video horizontally */
+}
+
+video {
+    width: 50%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
 }
  
   /* Next Project Button */
@@ -705,34 +812,7 @@ body {
     }
 }
  
-.video-container {
-    width: 80%; /* Limit the width of the image container */
-    margin-top: 20px; /* Add space between the paragraph and images */
-    margin-left: 60rem;
-}
-
-video {
-    width: 50%;
-    height: auto;
-    display: block;
-    border-radius: 20px;
-}
-/* Styling for the floating image */
-/* Footer Section */
-footer {
-    width: 100%;
-    position: relative;
-    padding: 20px 0;
-    background-color: transparent;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: auto; /* Ensures footer is pushed to the bottom if there's enough content above */
-}
-
-/* Footer Card */
-/* Footer Section */
+ 
 /* Footer Section */
 footer {
     width: 100%;
@@ -763,6 +843,7 @@ footer {
     flex-direction: column;
     justify-content: center; /* Vertically center content */
     align-items: center; /* Horizontally center content */
+  
 }
 
 /* Title and content styles */
@@ -772,9 +853,11 @@ footer {
     margin-bottom: 15px;
 }
 
-.footer-email {
-    font-size: 4.5rem;
+
+.footer-email {font-size: 4.5rem;
     margin: 10px 0;
+    max-width: 100%; /* Prevents overflowing the card */
+    overflow-wrap: break-word; /* Alternative for better browser support */
 }
 
 .footer-email a {
@@ -827,23 +910,14 @@ footer {
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
-    .footer-card {
-        width: 80%;
-        padding: 30px;
-    }
 
-    .footer-links ul {
-        text-align: center;
-        padding: 0;
+@media (max-width: 1024px) {
+    .scroll-down-arrow {
+        display: none;
     }
-
-    .footer-links li {
-        display: block;
-        margin: 5px 0;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
+}
+@media (min-width: 1920px) {
+    .scroll-down-arrow {
+        display: none;
     }
 }
